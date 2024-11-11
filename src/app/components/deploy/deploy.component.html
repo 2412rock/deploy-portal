@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 class="header">Deploy Portal</h1>
+    
+    <!-- Settings Icon -->
+    <button mat-icon-button class="settings-icon" (click)="openSettingsDialog()">
+      <mat-icon>settings</mat-icon>
+    </button>
+
+    <!-- Dropdown for Target Server Selection -->
+  <mat-form-field appearance="fill" class="target-server-dropdown">
+    <mat-label>Target Server</mat-label>
+    <mat-select [(value)]="targetServer">
+      <mat-option value="local">Local</mat-option>
+      <mat-option value="gcp">GCP</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+    <div class="toggle-group">
+      <mat-slide-toggle [(ngModel)]="options.deployBackend">Deploy Backend</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="options.deploySQL">Deploy SQL</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="options.deployMigrations">Deploy Migrations</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="options.deployBot">Deploy Bot</mat-slide-toggle>
+    </div>
+  
+    <button mat-raised-button color="primary" (click)="openConfirmationDialog()" [disabled]="isLoading">
+      <span *ngIf="!isLoading">Deploy</span>
+      <mat-spinner *ngIf="isLoading" diameter="24"></mat-spinner>
+    </button>
+    <div *ngIf="error">
+      <span style="color: red; font-size: medium;">{{errorAt.errorAt}}</span>
+    </div>
+  </div>
+  

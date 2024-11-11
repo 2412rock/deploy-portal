@@ -1,0 +1,42 @@
+.container {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    position: relative;
+  }
+  
+  .header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+  }
+  
+  /* Position settings icon in the top-right corner */
+  .settings-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+  }
+  
+  .toggle-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  button[mat-raised-button] {
+    margin-top: 20px;
+  }
+  

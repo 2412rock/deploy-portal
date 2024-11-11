@@ -1,0 +1,55 @@
+.dialog-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+  }
+  
+  .dialog-content {
+    padding: 16px 24px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  mat-form-field {
+    margin-bottom: 16px;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 24px;
+  }
+  
+  button {
+    margin-left: 8px;
+  }
+  
+  button.mat-flat-button {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  button.mat-flat-button:hover {
+    background-color: #303f9f;
+  }
+  
+  button.mat-button {
+    color: #3f51b5;
+  }
+  
+  mat-dialog-content {
+    padding-top: 16px;
+  }
+  
+  mat-form-field .mat-input-element {
+    font-size: 1rem;
+    padding: 8px;
+  }
+  
+  mat-form-field .mat-label {
+    font-size: 0.9rem;
+  }
+  
