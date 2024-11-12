@@ -97,7 +97,28 @@ export class DeployComponent {
 
         }
         else {
-          await firstValueFrom(this.httpService.deployGCPServer(req))
+          console.log("Deploy local")
+          try {
+            let response = await firstValueFrom(this.httpService.deployGCPServer(req));
+            console.log(response)
+            if (response != "ok") {
+              console.log("Deploy local error")
+              this.error = true;
+              this.errorAt = new Error();
+              this.errorAt.errorAt = "Deploy local server error";
+              this.isLoading = false;
+              return;
+            }
+          }
+          catch (error) {
+            this.isLoading = false;
+            console.log("Deploy local error")
+            this.error = true;
+            this.errorAt = new Error();
+            this.errorAt.errorAt = "Deploy local server http error";
+            this.isLoading = false;
+          }
+          this.isLoading = false;
         }
 
         if (this.options.deployMigrations) {

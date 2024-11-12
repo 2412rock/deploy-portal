@@ -11,17 +11,17 @@ export class HttpService {
   }
 
   deployLocalServer(req: DeployReq){
-    return this.http.post<any>(`http://10.244.17.97/api/deploy`, req)
+    return this.http.post<any>(`http://10.244.17.97:8080/api/deploy`, req)
   }
 
   deployGCPServer(req: DeployReq){
-    return this.http.post<any>(`http://10.244.216.141/api/deploy`, req)
+    return this.http.post<any>(`http://10.244.216.141:8080/api/deploy`, req)
   }
 
   deployMigrations(){
     let req = new DeployReq();
     req.deploy_migrations = true;
-    return this.http.post<any>(`http://10.244.225.232/api/deploy`, req)
+    return this.http.post<any>(`http://10.244.225.232:8080/api/deploy`, req)
   }
 }
 
